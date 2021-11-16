@@ -127,3 +127,4 @@ function display(e) {
   UIpreviousInput.textContent = previousDigit;
   e.preventDefault();
 }
+// done
