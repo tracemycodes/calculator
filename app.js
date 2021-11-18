@@ -115,6 +115,7 @@ const compute = () => {
   }
 
   currentDigit = computation.toString();
+
   operand = undefined;
   previousDigit = " ";
 };

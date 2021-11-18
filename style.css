@@ -104,6 +104,7 @@ input[type="radio"] {
   font-weight: 600;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  overflow-x: hidden;
 }
 
 .initial-output {
@@ -121,12 +122,12 @@ input[type="radio"] {
   margin-top: 1rem;
   padding: 1.2rem;
   display: grid;
-  min-height: 20rem;
+  min-height: 23rem;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 0.8rem;
   background-color: hsl(223, 31%, 20%);
-  border-radius: 00.3rem;
+  border-radius: 00.4rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
