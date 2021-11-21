@@ -6,6 +6,22 @@ const UIoperation = document.querySelectorAll("[data-operation]");
 const UIreset = document.querySelector("[data-reset]");
 const UIequals = document.querySelector("[data-equals]");
 const UIcalculator = document.querySelector(".calculator-buttons");
+const UItheme = document.getElementsByName("radio")
+
+// console.log(UItheme);
+document.addEventListener("DOMContentLoaded", getBlend)
+
+function getBlend () {
+  let blend;
+  if (localStorage.getItem("blend") === null) {
+    blend = []
+  } else {
+    blend = JSON.parse(localStorage.getItem("blend"))
+  }
+
+  document.body.className = blend;
+}
+
 
 let currentDigit = "",
   previousDigit = "",
@@ -128,4 +144,22 @@ function display(e) {
   UIpreviousInput.textContent = previousDigit;
   e.preventDefault();
 }
-// done
+
+UItheme.forEach(theme => {
+  theme.onclick = () => {
+    document.body.className = theme.value;
+    setLocalStorage(theme.value)
+  }
+  
+})
+
+function setLocalStorage(themeColor) {
+  let blend;
+  if (localStorage.getItem("blend") === null) {
+    blend = []
+  } else {
+    blend = JSON.parse(localStorage.getItem("blend"))
+  }
+
+  localStorage.setItem("blend", JSON.stringify(themeColor));
+}

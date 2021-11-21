@@ -1,3 +1,60 @@
+.theme1 {
+  --background-color: hsl(222, 26%, 31%);
+  --header-color: hsl(0, 0%, 100%);
+  --theme-background-color: hsl(223, 31%, 20%);
+  --check-background-color: hsl(6, 63%, 50%);
+  --display-background: hsl(224, 36%, 15%);
+  --display-color: hsl(0, 0%, 100%);
+  --digit-background: hsl(223, 31%, 20%);
+  --button-color: hsl(221, 14%, 31%);
+  --button-background: hsl(30, 25%, 89%);
+  --button-shadow: hsl(28, 16%, 65%);
+  --delete-button-color: hsl(0, 0%, 100%);
+  --delete-button-background: hsl(225, 21%, 49%);
+  --delete-button-shadow: hsl(224, 28%, 35%);
+  --equals-button-color: hsl(0, 0%, 100%);
+  --equals-button-background: hsl(6, 63%, 50%);
+  --equals-button-shadow: hsl(6, 70%, 34%);
+}
+
+.theme2 {
+  --background-color: hsl(0, 0%, 90%);
+  --header-color: hsl(60, 10%, 19%);
+  --theme-background-color: hsl(0, 5%, 81%);
+  --check-background-color: hsl(6, 63%, 50%);
+  --display-background: hsl(0, 0%, 93%);
+  --display-color: hsl(60, 10%, 19%);
+  --digit-background: hsl(0, 5%, 81%);
+  --button-color: hsl(60, 10%, 19%);
+  --button-background: hsl(45, 7%, 89%);
+  --button-shadow: hsl(35, 11%, 61%);
+  --delete-button-color: hsl(0, 0%, 100%);
+  --delete-button-background: hsl(185, 42%, 37%);
+  --delete-button-shadow: hsl(185, 58%, 25%);
+  --equals-button-color: hsl(0, 0%, 100%);
+  --equals-button-background: hsl(25, 98%, 40%);
+  --equals-button-shadow: hsl(25, 99%, 27%);
+}
+
+.theme3 {
+  --background-color: hsl(268, 75%, 9%);
+  --header-color: hsl(52, 100%, 62%);
+  --theme-background-color: hsl(268, 71%, 12%);
+  --check-background-color: hsl(176, 100%, 44%);
+  --display-background: hsl(268, 71%, 12%);
+  --display-color: hsl(52, 100%, 62%);
+  --digit-background: hsl(268, 71%, 12%);
+  --button-color: hsl(52, 100%, 62%);
+  --button-background: hsl(268, 47%, 21%);
+  --button-shadow: hsl(290, 70%, 36%);
+  --delete-button-color: hsl(0, 0%, 100%);
+  --delete-button-background: hsl(281, 89%, 26%);
+  --delete-button-shadow: hsl(285, 91%, 52%);
+  --equals-button-color: hsl(198, 20%, 13%);
+  --equals-button-background: hsl(176, 100%, 44%);
+  --equals-button-shadow: hsl(177, 92%, 70%);
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -5,13 +62,14 @@
 }
 
 .main {
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--background-color);
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease-in;
 }
 
 .container {
@@ -24,11 +82,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: var(--header-color);
   font-weight: 600;
   font-size: 0.75rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  transition: color 0.3s ease-in;
 }
 
 .header > .theme {
@@ -51,7 +110,7 @@
 
 .theme-select div:last-child {
   border-radius: 2rem;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--theme-background-color);
   margin-top: 0.1rem;
 }
 
@@ -80,8 +139,9 @@ input[type="radio"] {
 }
 
 .check-container input:checked ~ .checkmark {
-  background-color: blue;
+  background-color: var(--check-background-color);
   border-radius: 50%;
+  transition: background-color 0.3s ease-in;
 }
 
 .checkmark:after {
@@ -96,15 +156,17 @@ input[type="radio"] {
 
 .display {
   min-height: 4rem;
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--display-background);
   margin-top: 1rem;
   border-radius: 0.3rem;
   padding: 1rem;
-  color: white;
+  color: var(--display-color);
   font-weight: 600;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   overflow-x: hidden;
+  transition: background-color 0.3s ease-in;
+  transition: color 0.3s ease-in;
 }
 
 .initial-output {
@@ -126,40 +188,52 @@ input[type="radio"] {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 0.8rem;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--digit-background);
   border-radius: 00.4rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  transition: background-color 0.3s ease-in;
 }
 
 .calculator-buttons > button {
   font-size: 1.3rem;
   font-weight: 700;
-  color: hsl(221, 14%, 31%);
+  background-color: var(--button-background);
+  color: var(--button-color);
   border-radius: 00.3rem;
   border: none;
   outline: none;
-  box-shadow: 0 0.2rem 0 hsl(28, 16%, 65%);
+  box-shadow: 0 0.2rem 0 var(--button-shadow);
+  transition: background-color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+}
+
+.calculator-buttons > button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0.02rem 0 var(--button-shadow);
 }
 
 .span-two {
   grid-column: span 2;
   height: 2.75rem;
-  font-size: 0.5rem;
 }
 
 #delete-button,
 #reset-button {
-  background-color: hsl(225, 21%, 49%);
-  color: white;
-  font-size: 1rem;
-  box-shadow: 0 0.2rem 0 hsl(224, 28%, 35%);
+  background-color: var(--delete-button-background);
+  color: var(--delete-button-color);
+  font-size: 0.75rem;
+  box-shadow: 0 0.2rem 0 var(--delete-button-shadow);
+  transition: background-color 0.3s ease-in;
+  transition: color 0.3s ease-in;
 }
 
 #equals-button {
-  background-color: hsl(6, 63%, 50%);
-  color: white;
+  background-color: var(--equals-button-background);
+  color: var(--equals-button-color);
   font-size: 1rem;
-  font-weight: bold;
-  box-shadow: 0 0.2rem 0 hsl(6, 70%, 34%);
+  font-weight: bolder;
+  box-shadow: 0 0.2rem 0 var(--equals-button-shadow);
+  transition: background-color 0.3s ease-in;
+  transition: color 0.3s ease-in;
 }
